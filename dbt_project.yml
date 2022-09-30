@@ -7,7 +7,7 @@ version: '1.0.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'sample_demo'
+profile: 'sample-dbt-databricks-project'
 
 
 # These configurations specify where dbt should look for different types of files.
@@ -68,11 +68,19 @@ models:
       aggregates:
         +materialized: table
         +schema: aggregate_tables
+    samples:
+      incremental:
+        +enabled: false
+
+
+
+clean-targets:
+    - logs
 
     
 seeds:
-  tpch:
-    snowflake_contract_rates:
-      +column_types:
-        effective_date: DATE
-        rate: NUMBER   
+  sample_demo:
+      +pre-hook: ["USE CATALOG external_sa_tables","{{ truncate_table_if_exists() }}", "DROP TABLE IF EXISTS {{ this }}",  "{{ test_macro() }}"]
+      +schema: "steve_d_external_tables_sandbox"
+      +file_format: delta
+      +location_root: s3://steve-d-databricks-demo-mount/seeds

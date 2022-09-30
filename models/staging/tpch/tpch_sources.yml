@@ -6,7 +6,12 @@ sources:
     description: Welcome to the dbt Labs demo dbt project! We use the [TPCH dataset](https://docs.snowflake.com/en/user-guide/sample-data-tpch.html) to create a sample project to emulate what a production project might look like!
     schema: steve_d_raw_data
     tables:
+<<<<<<< HEAD
       - name: tchp__orders
+=======
+      - name: orders
+        identifier: tchp__orders
+>>>>>>> f6d5a34e4ed384dad15b509a3acb4a96e373f2c5
         description: main order tracking table
         freshness: # make this a warning as this is static data
           warn_after: {count: 6, period: hour}
@@ -41,7 +46,12 @@ sources:
           - name: o_comment
             description: '{{ doc("comment") }}'
           
+<<<<<<< HEAD
       - name: tchp__customer
+=======
+      - name: customer
+        identifier: tchp__customer
+>>>>>>> f6d5a34e4ed384dad15b509a3acb4a96e373f2c5
         description: main customer table
         columns:
           - name: c_custkey
@@ -66,7 +76,12 @@ sources:
           - name: c_comment
             description: '{{ doc("comment") }}'
 
+<<<<<<< HEAD
       - name: tchp__lineitem
+=======
+      - name: lineitem
+        identifier: tchp__lineitem
+>>>>>>> f6d5a34e4ed384dad15b509a3acb4a96e373f2c5
         description: main lineitem table
         columns:
           - name: l_orderkey
@@ -114,7 +129,12 @@ sources:
           - name: l_comment
             description: '{{ doc("comment") }}'
 
+<<<<<<< HEAD
       - name: tchp__nation
+=======
+      - name: nation
+        identifier: tchp__nation
+>>>>>>> f6d5a34e4ed384dad15b509a3acb4a96e373f2c5
         description: nation mapping
         columns:
           - name: n_nationkey
@@ -136,6 +156,7 @@ sources:
             description: '{{ doc("comment") }}'
 
       - name: part
+        identifier: tchp__part
         description: main part table
         columns:
           - name: p_partkey
@@ -162,7 +183,12 @@ sources:
           - name: p_comment
             description: '{{ doc("comment") }}'
 
+<<<<<<< HEAD
       - name: tchp__partsupp
+=======
+      - name: partsupp
+        identifier: tchp__partsupp
+>>>>>>> f6d5a34e4ed384dad15b509a3acb4a96e373f2c5
         description: main part supplier table
         columns:
           - name: ps_partkey
@@ -184,7 +210,12 @@ sources:
           - name: ps_comment
             description: '{{ doc("comment") }}'
 
+<<<<<<< HEAD
       - name: tchp__region
+=======
+      - name: region
+        identifier: tchp__region
+>>>>>>> f6d5a34e4ed384dad15b509a3acb4a96e373f2c5
         description: region mapping
         columns:
           - name: r_regionkey
@@ -199,7 +230,12 @@ sources:
           - name: r_comment
             description: '{{ doc("comment") }}'
 
+<<<<<<< HEAD
       - name: tchp__supplier
+=======
+      - name: supplier
+        identifier: tchp__supplier
+>>>>>>> f6d5a34e4ed384dad15b509a3acb4a96e373f2c5
         description: main supplier table
         columns:
           - name: s_suppkey
