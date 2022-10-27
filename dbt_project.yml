@@ -70,7 +70,7 @@ models:
         +schema: aggregate_tables
     samples:
       incremental:
-        +enabled: false
+        +enabled: true
 
 
 

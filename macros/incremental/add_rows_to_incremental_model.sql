@@ -8,7 +8,7 @@
         2 as a_new_column_two,
         3 as a_new_column_three,
         4 as a_new_column_four,
-        5 as a_new_column_five,
-        6 as a_new_column_six
+        5 as a_new_column_five
+        -- 6 as a_new_column_six
 )
 {%- endmacro %}

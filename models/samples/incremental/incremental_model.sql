@@ -10,7 +10,7 @@ select
     *
    
 
-from {{source('sample_data', 'sample_incremental_table')}}
+from steve_d_raw_data.sample_incremental_table
 
 {% if is_incremental() %}
 
